@@ -1,18 +1,18 @@
-# ElPinguino
+# El Pinguino
+[![Gem Version](https://badge.fury.io/rb/el_pinguino.svg)](http://badge.fury.io/rb/el_pinguino)
+[![Code Climate](https://codeclimate.com/github/HackerParadise2014/el_pinguino/badges/gpa.svg)](https://codeclimate.com/github/HackerParadise2014/el_pinguino)
 
-Scrape TravelMob locations and convert to json.
+El Pinguino lets you scrape Travelmob locations by country and convert to JSON.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
+# Gemfile
 gem 'el_pinguino'
 ```
-
-And then execute:
-
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
@@ -20,18 +20,25 @@ Or install it yourself as:
 
 ## Usage
 ```ruby
-ElPinguino.find_locations(
-country: 'Thailand',
-city: 'Bangkok'
-)
+# Country is mandatory to prevent city-name collisions
+ElPinguino.find_locations(country: 'Thailand',
+	city: 'Bangkok',
+	people: '6',
+	beds: '3')
 ```
 
 #### Optional Fields
-:start_date, :end_date, :room_type, :bedrooms, :bathrooms, :beds, :guest_number, :max_pages
+```ruby
+bathrooms # Number of bathrooms
+bedrooms # Number of bedrooms
+beds # Number of beds 
+pages # Maximum number of pages to scrape
+people # Number of guests that can be accomodated
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/el_pinguino/fork )
+1. Fork it ( https://github.com/HackerParadise2014/el_pinguino/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
