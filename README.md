@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/HackerParadise2014/el_pinguino.png?label=ready&title=Ready)](https://waffle.io/HackerParadise2014/el_pinguino)
 # El Pinguino
 [![Gem Version](https://badge.fury.io/rb/el_pinguino.svg)](http://badge.fury.io/rb/el_pinguino)
 [![Code Climate](https://codeclimate.com/github/HackerParadise2014/el_pinguino/badges/gpa.svg)](https://codeclimate.com/github/HackerParadise2014/el_pinguino)
