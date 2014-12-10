@@ -23,17 +23,19 @@ Or install it yourself as:
 # Country is mandatory to prevent city-name collisions
 ElPinguino.find_locations(country: 'Thailand',
 	city: 'Bangkok',
-	people: '6',
-	beds: '3')
+	people: 6,
+	beds: 3,
+	amenities: 'air_conditioning,internet')
 ```
 
 #### Optional Fields
 ```ruby
-bathrooms # Number of bathrooms
-bedrooms # Number of bedrooms
-beds # Number of beds 
-pages # Maximum number of pages to scrape
-people # Number of guests that can be accomodated
+amenities	# String of comma seperated values
+bathrooms 	# Number of bathrooms
+bedrooms  	# Number of bedrooms
+beds 		# Number of beds 
+pages 		# Maximum number of pages to scrape
+people 		# Number of guests that can be accomodated
 ```
 
 ## Contributing
