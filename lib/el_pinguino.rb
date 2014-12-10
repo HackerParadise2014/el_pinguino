@@ -19,18 +19,17 @@ module ElPinguino
       location_url = "#{country}/#{state}/#{city}".gsub(' ','-').gsub('//','/')
       base_url = "http://www.travelmob.com/vacation-rentals/#{location_url}"
 
-      if !opts.has_key?('pages')
-        opts[:pages] = number_of_pages("#{base_url}")
-      end
-
       options_url = ''
       opts.reject{ |k,v| [:city, :country, :pages].include?(k) }.each do |k,v|
-        options_url << "?#{k}=#{v}"
+        options_url << "&#{k}=#{v}"
       end
 
+      unless opts.has_key?('pages')
+        opts[:pages] = number_of_pages("#{base_url}?page=1#{options_url}")
+      end
       results = []
-      opts.fetch(:pages).times do |pg|
-        url = "#{base_url}#{options_url}?page=#{(pg + 1).to_s}"
+      (opts.fetch(:pages) + 1).times do |pg|
+        url = "#{base_url}?page=#{(pg + 1).to_s}#{options_url}"
         puts url
         Nokogiri::HTML(open(url)).css(".space.row").each do |box|
           name = box.css('h4').text
