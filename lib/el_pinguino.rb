@@ -19,6 +19,10 @@ module ElPinguino
       location_url = "#{country}/#{state}/#{city}".gsub(' ','-').gsub('//','/')
       base_url = "http://www.travelmob.com/vacation-rentals/#{location_url}"
 
+      if opts[:amenities]
+        opts[:amenities] = opts[:amenities].gsub(',','%2C')
+      end
+
       options_url = ''
       opts.reject{ |k,v| [:city, :country, :pages].include?(k) }.each do |k,v|
         options_url << "&#{k}=#{v}"
